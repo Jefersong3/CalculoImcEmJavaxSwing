@@ -17,6 +17,7 @@ public class SomaImc {
         float altura;
         float imc;
         String resp;
+        String resul;
         
        resp = JOptionPane.showInputDialog("Digite seu Peso: ");
        peso = Integer.parseInt(resp);
@@ -25,8 +26,22 @@ public class SomaImc {
        altura = Float.parseFloat(resp);
        
        imc = peso/(altura*altura);
+       
+       if (imc <= 19)
+         resul = "Abaixo do Peso";
+      else
+         if (imc <= 25)
+            resul = "Peso ideal";
+         else
+            if (imc <= 30)
+               resul = "Acima do Peso";
+            else
+               if (imc <= 35)
+                  resul = "Obesidade Leve";
+               else
+                  resul = "Obesidade";
          
-       JOptionPane.showMessageDialog(null, "Seu IMC é: "+imc);
+       JOptionPane.showMessageDialog(null, "Seu IMC é: "+imc+ " "+resul);
         
        
       
